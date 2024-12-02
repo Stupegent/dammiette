@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" >
+<head>
+	<title>Product Detail</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+	<style>
+	  body, input, select, button, label {
+			font-family: 'Dancing Script', cursive !important;
+		}
+	  body {
+		font-family: 'Dancing Script', cursive;
+		background-color: #fdfdfd;
+		margin: 0;
+		padding: 0;
+	  }
+	  form {
+		max-width: 400px;
+		margin: 20px auto;
+		padding: 20px;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		background-color: #fff;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	  }
+	  label {
+		display: block;
+		margin-bottom: 5px;
+		font-weight: bold;
+		color: #444;
+	  }
+	  .form-group {
+		margin-bottom: 15px;
+	  }
+	  input, select, button {
+		width: 100%;
+		padding: 10px;
+		margin-top: 5px;
+		font-family: 'Dancing Script', cursive;
+		font-size: 1.2em;
+		border: 2px solid #101010;
+		border-radius: 10px;
+		box-sizing: border-box;
+	  }
+	  .color-options, .size-options {
+		display: flex;
+		gap: 15px;
+	  }
+	  .color-option, .size-option {
+		display: flex;
+		align-items: center;
+	  }
+	  .color-input {
+		appearance: none;
+		width: 25px;
+		height: 25px;
+		border: 2px solid #ccc;
+		border-radius: 50%;
+		margin-right: 10px;
+		cursor: pointer;
+		outline: none;
+	  }
+	  .color-input.bordeau { background-color: rgb(126, 37, 37); }
+	  .color-input.beige { background-color: beige; }
+	  .color-input.black { background-color: black; }
+	  .color-input:checked {
+		border: 2px solid #000;
+	  }
+	  button {
+		background-color: greenyellow;
+		color: rgb(211, 110, 110);
+		border: 4px solid black;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	  }
+	  button:hover {
+		background-color: #ff6b81;
+		color: rgb(230, 230, 230);
+	  }
+	  input:focus {
+		border-color: #881b41; /* Pink border on focus */
+		outline: none; /* Remove default focus outline */
+		}
+	</style>
+
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="static/images/dammietteLogo.svg/">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/linearicons-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="static/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/MagnificPopup/magnific-popup.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
