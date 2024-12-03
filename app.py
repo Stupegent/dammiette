@@ -145,11 +145,6 @@ def product():
     return render_template('product-detail.html')
 
 # Initialize the database
-with app.app_context():
-    db.create_all()
-    new_user = User(username="testuser", password="testpass")  # Replace with hashed passwords in production
-    db.session.add(new_user)
-    db.session.commit()
 
 
 
