@@ -10,12 +10,6 @@ import os
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Replace with a strong secret key
 
-
-db = SQLAlchemy(app)
-login_manager = LoginManager(app)
-login_manager.login_view = 'login'  # Redirect unauthorized users to the login page
-# Set the database URI
-# Configure the database connection
 DATABASE_URL = os.getenv("DATABASE_URL")  # Render provides this automatically
 if DATABASE_URL.startswith("postgres://"):
     # Render may provide an outdated URI scheme. Update it for compatibility.
@@ -23,6 +17,12 @@ if DATABASE_URL.startswith("postgres://"):
 
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'  # Redirect unauthorized users to the login page
+# Set the database URI
+# Configure the database connection
+
 migrate = Migrate(app, db)
 
 
