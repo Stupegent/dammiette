@@ -147,11 +147,10 @@ def product():
 # Initialize the database
 with app.app_context():
     db.create_all()
-
-with app.app_context():
     new_user = User(username="testuser", password="testpass")  # Replace with hashed passwords in production
     db.session.add(new_user)
     db.session.commit()
+
 
 
 
