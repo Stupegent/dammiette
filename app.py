@@ -3,17 +3,26 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from flask_migrate import Migrate
+import os
+
+
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Replace with a strong secret key
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///form_data.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'  # Redirect unauthorized users to the login page
+# Set the database URI
+# Configure the database connection
+DATABASE_URL = os.getenv("DATABASE_URL")  # Render provides this automatically
+if DATABASE_URL.startswith("postgres://"):
+    # Render may provide an outdated URI scheme. Update it for compatibility.
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 migrate = Migrate(app, db)
 
 
@@ -143,5 +152,5 @@ with app.app_context():
 
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
