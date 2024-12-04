@@ -158,12 +158,7 @@ def product():
 def home():
     return render_template('index.html')
 
-# Initialize the database
-
-
-
-
-
+# Initialize thedatabase
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
