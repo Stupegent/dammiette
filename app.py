@@ -140,7 +140,9 @@ def product():
         )
         db.session.add(form_data)
         db.session.commit()
-        return redirect(url_for('sales'))
+
+        flash(f'.شكرا على اختيارنا, سنتواصل معك قريبا ', 'success')
+        return redirect(url_for('product'))
 
     return render_template('product-detail.html')
 

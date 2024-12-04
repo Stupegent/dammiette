@@ -120,6 +120,23 @@
             color: red;
             margin-left: 5px;
         }
+		.flash-message {
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        font-size: 16px;
+		text-align: center;
+    }
+    .success {
+        background-color: #d4edda; /* Light green */
+        color: #155724; /* Dark green */
+        border: 1px solid #c3e6cb;
+    }
+    .error {
+        background-color: #f8d7da; /* Light red */
+        color: #721c24; /* Dark red */
+        border: 1px solid #f5c6cb;
+    }
 	</style>
 
 <!--===============================================================================================-->	
@@ -413,6 +430,16 @@
 			</span>
 		</div>
 	</div>
+	<div>
+        <!-- Display Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
 		
 
 	<!-- Product Detail -->
