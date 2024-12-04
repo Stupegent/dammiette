@@ -144,6 +144,11 @@ def product():
 
     return render_template('product-detail.html')
 
+
+@app.route("/")
+def home():
+    return render_template('index.html')
+
 # Initialize the database
 
 
