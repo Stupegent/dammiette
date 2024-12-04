@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-from flask_migrate import Migrate
+# from flask_migrate import Migrate
 from flask_caching import Cache
 import os
 
@@ -29,7 +29,7 @@ login_manager.login_view = 'login'  # Redirect unauthorized users to the login p
 # Set the database URI
 # Configure the database connection
 
-migrate = Migrate(app, db)
+# migrate = Migrate(app, db)
 
 
 # User model for authentication
@@ -159,6 +159,11 @@ def home():
     return render_template('index.html')
 
 # Initialize thedatabase
+with app.app_context():
+    db.create_all()
+    new_user = User(username="achour", password="dammiette123")  # Replace with hashed passwords in production
+    db.session.add(new_user)
+    db.session.commit()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
