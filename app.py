@@ -11,7 +11,7 @@ import os
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Replace with a strong secret key
 
-DATABASE_URL = os.getenv("DATABASE_URL") or "postgresql://dammietteshoes_user:GJIuYJbYknkoB25LvkKS26Xuu87k4E9V@dpg-ct77r9jtq21c73bkakcg-a.frankfurt-postgres.render.com/dammietteshoes" # Render provides this automatically
+DATABASE_URL = os.getenv("DATABASE_URL") #or "postgresql://dammietteshoes_user:GJIuYJbYknkoB25LvkKS26Xuu87k4E9V@dpg-ct77r9jtq21c73bkakcg-a.frankfurt-postgres.render.com/dammietteshoes" # Render provides this automatically
 if DATABASE_URL.startswith("postgres://"):
     # Render may provide an outdated URI scheme. Update it for compatibility.
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
@@ -166,4 +166,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000,debug=True)
+    app.run(host="0.0.0.0", port=5000)
