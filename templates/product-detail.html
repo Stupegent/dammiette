@@ -495,6 +495,7 @@
 						<div class="p-t-33">
 							
 							<form action="/product" method="POST" dir="rtl">
+								<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 								<div class="form-group">
 								  <label>اختر اللون		<span class="required-star">*</span></label>
 								  <div class="color-options">
