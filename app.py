@@ -168,7 +168,6 @@ def update_status(order_id):
 @app.route('/product', methods=['GET', 'POST'])
 # @cache.cached(timeout=300)
 def product():
-    print('iam in the method')
     if request.method == 'POST':
         print('iam in the if')
         # CSRF protection is automatically handled
